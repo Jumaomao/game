@@ -9,7 +9,7 @@ var Ball = function(game) {
     //     fired: false,
     // }
     o.x = 180
-    o.y = 200,
+    o.y = 240,
     o.speedX = 4
     o.speedY = 4
     o.fired = false
@@ -31,6 +31,11 @@ var Ball = function(game) {
     }
     o.bounced = function() {
         o.speedY *= -1
+    }
+    o.hasPoint = function(x, y) {
+        var xIn = x >= o.x && x <= o.x + o.w
+        var yIn = y >= o.y && y <= o.y + o.h
+        return xIn && yIn
     }
     return o
 }
